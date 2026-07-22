@@ -17,18 +17,25 @@
 
   if (!sections.length) return;
 
+  /* Scrolls ONLY the quicknav's own horizontal track — never the page.
+     This replaces chip.scrollIntoView(), which was letting the browser
+     also adjust vertical scroll and snap the page back to the top. */
+  function centerChipHorizontally(chip) {
+    var trackRect = quicknav.getBoundingClientRect();
+    var chipRect = chip.getBoundingClientRect();
+    var isOutOfView = chipRect.left < trackRect.left || chipRect.right > trackRect.right;
+    if (!isOutOfView) return;
+
+    var targetLeft = chip.offsetLeft - (quicknav.clientWidth / 2) + (chip.clientWidth / 2);
+    quicknav.scrollTo({ left: Math.max(targetLeft, 0), behavior: 'smooth' });
+  }
+
   function setActiveChip(id) {
     chips.forEach(function (chip) {
       chip.classList.toggle('is-active', chip.getAttribute('href') === '#' + id);
     });
     var activeChip = quicknav.querySelector('.quicknav__chip.is-active');
-    if (activeChip) {
-      var trackRect = quicknav.getBoundingClientRect();
-      var chipRect = activeChip.getBoundingClientRect();
-      if (chipRect.left < trackRect.left || chipRect.right > trackRect.right) {
-        activeChip.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-      }
-    }
+    if (activeChip) centerChipHorizontally(activeChip);
   }
 
   if ('IntersectionObserver' in window) {
