@@ -255,13 +255,16 @@ a:focus-visible, button:focus-visible{
     background:var(--navy-950); z-index:99; padding:100px 28px 40px;
     transform:translateX(100%); transition:transform .35s ease;
     overflow-y:auto;
+    overflow-x:hidden;
   }
   .nav.is-open{transform:translateX(0);}
   .nav__list{flex-direction:column; align-items:flex-start; gap:6px; width:100%;}
   .nav__list > li{width:100%;}
   .nav__list > li > a, .nav__dropdown-btn{width:100%; padding:13px 0; justify-content:space-between; border-bottom:1px solid var(--line-dark);}
   .nav__dropdown-menu{
-    position:static; transform:none; width:100%; box-shadow:none; background:var(--navy-800);
+    position:static !important; left:auto !important; transform:none !important;
+    width:100% !important; max-width:100% !important;
+    box-shadow:none; background:var(--navy-800);
     max-height:0; opacity:1; visibility:visible; overflow:hidden; transition:max-height .3s ease;
     border-radius:var(--radius-sm); margin-top:6px;
   }
