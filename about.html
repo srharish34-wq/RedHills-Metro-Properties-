@@ -172,7 +172,7 @@ a:focus-visible, button:focus-visible{
 }
 .story__media{position:relative;}
 .story__image{
-  width:100%; aspect-ratio:1/1.05; border-radius:var(--radius-lg);
+  width:100%; aspect-ratio:1/1.05; min-height:340px; border-radius:var(--radius-lg);
   /* background-color:var(--navy-800); */
   background-image:linear-gradient(160deg, var(--navy-700), var(--gold-600) 140%), url('images/about-story.jpg');
   background-blend-mode:overlay; background-size:cover; background-position:center;
@@ -216,7 +216,7 @@ a:focus-visible, button:focus-visible{
 .culture__inner{max-width:1320px; margin:0 auto; padding:0 40px; display:grid; grid-template-columns:.85fr 1.15fr; gap:70px; align-items:center;}
 .culture__media{position:relative;}
 .culture__image{
-  width:100%; aspect-ratio:1/1.05; border-radius:var(--radius-lg);
+  width:100%; aspect-ratio:1/1.05; min-height:340px; border-radius:var(--radius-lg);
   /* background-color:var(--navy-800); */
   background-image:linear-gradient(160deg, var(--navy-700), var(--gold-600) 140%), url('images/about-office.jpg');
   background-blend-mode:overlay; background-size:cover; background-position:center;
@@ -250,14 +250,15 @@ a:focus-visible, button:focus-visible{
    ========================================================= */
 .founder__inner{max-width:1320px; margin:0 auto; padding:0 40px; display:grid; grid-template-columns:.75fr 1.25fr; gap:70px; align-items:center;}
 .founder__media{position:relative;}
-.founder__image{
-  width:100%; aspect-ratio:4/5; border-radius:var(--radius-lg);
+   .founder__image{
+  width:100%; aspect-ratio:4/5; min-height:400px; border-radius:var(--radius-lg);
   /* background-color:var(--navy-800); */
   background-image:linear-gradient(160deg, var(--navy-700), var(--navy-950)), url('images/founder.jpg');
   background-blend-mode:overlay; background-size:cover; background-position:center top;
   box-shadow:var(--shadow-soft);
   border:1px solid var(--line);
 }
+
 .founder__quote{
   font-family:var(--accent-serif); font-style:italic; font-size:19px; line-height:1.55;
   color:var(--navy-900); border-left:3px solid var(--gold-500);
@@ -265,7 +266,11 @@ a:focus-visible, button:focus-visible{
 }
 .founder__role strong{display:block; font-family:var(--serif); font-size:15.5px; color:var(--navy-900);}
 .founder__role span{font-size:13px; color:var(--ink-400);}
-@media (max-width:980px){ .founder__inner{grid-template-columns:1fr; gap:50px;} .founder__media{max-width:340px; margin:0 auto;} }
+@media (max-width:980px){
+  .founder__inner{grid-template-columns:1fr; gap:50px;}
+  .founder__media{max-width:340px; margin:0 auto;}
+  .founder__image{min-height:340px;}
+}
 
 /* =========================================================
    ACHIEVEMENTS (benefits-tile pattern)
