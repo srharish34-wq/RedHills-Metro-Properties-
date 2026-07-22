@@ -1,4 +1,28 @@
+(function () {
+    'use strict';
 
+    /* ---------- Projects dropdown toggle ---------- */
+    var projectsDropdown = document.getElementById('projectsDropdown');
+    var projectsDropdownTrigger = document.getElementById('projectsDropdownTrigger');
+    if (projectsDropdown && projectsDropdownTrigger) {
+        projectsDropdownTrigger.addEventListener('click', function (e) {
+            e.stopPropagation();
+            var isOpen = projectsDropdown.classList.toggle('is-open');
+            projectsDropdownTrigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+        document.addEventListener('click', function (e) {
+            if (!projectsDropdown.contains(e.target)) {
+                projectsDropdown.classList.remove('is-open');
+                projectsDropdownTrigger.setAttribute('aria-expanded', 'false');
+            }
+        });
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                projectsDropdown.classList.remove('is-open');
+                projectsDropdownTrigger.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
 
     /* ---------- Footer year auto-update ---------- */
     var yearEls = document.querySelectorAll('footer p');
@@ -261,91 +285,3 @@
         startCarousels();
     });
 })();
-
-
- /* ---------------------------------------------------------
-     "Projects" dropdown — click to toggle (works desktop + mobile)
-  --------------------------------------------------------- */
-  var dropdownBtn = document.getElementById('projectsBtn');
-  var dropdownWrap = dropdownBtn ? dropdownBtn.closest('.nav__dropdown') : null;
-
-  function closeAllDropdowns() {
-    document.querySelectorAll('.nav__dropdown.is-open').forEach(function (el) {
-      el.classList.remove('is-open');
-      var btn = el.querySelector('.nav__dropdown-btn');
-      if (btn) btn.setAttribute('aria-expanded', 'false');
-    });
-  }
-
-  if (dropdownBtn && dropdownWrap) {
-    dropdownBtn.addEventListener('click', function (e) {
-      e.preventDefault();
-      var willOpen = !dropdownWrap.classList.contains('is-open');
-      closeAllDropdowns();
-      if (willOpen) {
-        dropdownWrap.classList.add('is-open');
-        dropdownBtn.setAttribute('aria-expanded', 'true');
-      }
-    });
-  }
-
-  // Click outside closes any open dropdown (desktop behaviour)
-  document.addEventListener('click', function (e) {
-    if (!dropdownWrap) return;
-    if (!dropdownWrap.contains(e.target)) {
-      dropdownWrap.classList.remove('is-open');
-      if (dropdownBtn) dropdownBtn.setAttribute('aria-expanded', 'false');
-    }
-  });
-
-
-/* ---------------------------------------------------------
-     Mobile nav: hamburger + backdrop
-  --------------------------------------------------------- */
-  var hamburger = document.getElementById('hamburgerBtn');
-  var nav = document.getElementById('siteNav');
-  var backdrop = document.getElementById('navBackdrop');
-
-  function openNav() {
-    if (!nav || !hamburger || !backdrop) return;
-    nav.classList.add('is-open');
-    backdrop.classList.add('is-visible');
-    hamburger.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeNav() {
-    if (!nav || !hamburger || !backdrop) return;
-    nav.classList.remove('is-open');
-    backdrop.classList.remove('is-visible');
-    hamburger.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-    closeAllDropdowns();
-  }
-
-  if (hamburger) {
-    hamburger.addEventListener('click', function () {
-      var isOpen = nav.classList.contains('is-open');
-      if (isOpen) closeNav();
-      else openNav();
-    });
-  }
-
-  if (backdrop) {
-    backdrop.addEventListener('click', closeNav);
-  }
-
-  // Close mobile nav with Escape key
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && nav && nav.classList.contains('is-open')) closeNav();
-  });
-
-  // Close mobile nav when a plain (non-dropdown) link is tapped
-  if (nav) {
-    var navLinks = nav.querySelectorAll('.nav__list > li > a');
-    navLinks.forEach(function (link) {
-      link.addEventListener('click', function () {
-        if (window.innerWidth <= 980) closeNav();
-      });
-    });
-  }
