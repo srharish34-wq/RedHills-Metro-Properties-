@@ -7,8 +7,10 @@
 <meta name="description" content="17 years of trusted CMDA &amp; RERA approved land sales in Chennai. Learn about Redhills Metro Properties' story, mission, milestones and the team behind 1,500+ happy land owners.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
 <style>
+
 /* =========================================================
    REDHILLS METRO PROPERTIES — ABOUT PAGE
    Shares design tokens & shell components with Home/Career pages.
@@ -46,7 +48,7 @@
 }
 
 *,*::before,*::after{box-sizing:border-box;}
-html{scroll-behavior:smooth; overflow-x:hidden; width:100%;}
+html{scroll-behavior:smooth;}
 body{
   margin:0;
   font-family:var(--sans);
@@ -54,7 +56,6 @@ body{
   background:var(--paper);
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
-  width:100%;
 }
 img{max-width:100%;display:block;}
 a{color:inherit;text-decoration:none;}
@@ -136,115 +137,16 @@ a:focus-visible, button:focus-visible{
 .topbar__item .i{width:13px; height:13px; color:var(--gold-400);}
 .topbar__phone{color:var(--gold-300); font-weight:600;}
 
-.header{position:sticky; top:0; z-index:100; background:var(--navy-900); border-bottom:1px solid var(--line-dark);}
-.header__inner{max-width:1320px; margin:0 auto; padding:14px 40px; display:flex; align-items:center; justify-content:space-between; gap:24px;}
-
-.brand{display:flex; align-items:center; gap:12px;}
-.brand__mark{
-  width:44px; height:44px; border-radius:10px;
-  background:linear-gradient(135deg, var(--gold-400), var(--gold-600));
-  color:var(--navy-950);
-  font-family:var(--serif); font-weight:700; font-size:16px;
-  display:flex; align-items:center; justify-content:center;
-  flex-shrink:0;
-}
-.brand__text{display:flex; flex-direction:column; line-height:1.15;}
-.brand__text strong{font-family:var(--serif); font-size:17px; color:#fff; font-weight:700; letter-spacing:.01em;}
-.brand__text em{font-style:italic; font-family:var(--accent-serif); font-size:14px; color:var(--gold-400); font-weight:600;}
-
-.nav__list{display:flex; align-items:center; gap:34px;}
-.nav__list > li > a, .nav__dropdown-btn{
-  font-size:17px; font-weight:700; color:#dde1ec;
-  display:flex; align-items:center; gap:5px;
-  padding:8px 0; position:relative;
-}
-.nav__list > li > a::after{
-  content:""; position:absolute; left:0; right:0; bottom:0; height:2px;
-  background:var(--gold-500); transform:scaleX(0); transform-origin:left;
-  transition:transform .25s ease;
-}
-
-.brand__logo{
-  height:70px; width:220px; max-width:100px;
-  object-fit:contain; flex-shrink:0;
-}
-.nav__list > li > a:hover::after, .nav__list > li > a.is-active::after{transform:scaleX(1);}
-.nav__list > li > a.is-active, .nav__list > li > a:hover, .nav__dropdown-btn:hover{color:#fff;}
-
-.nav__dropdown{position:relative;}
-.i--chevron{width:13px; height:13px; transition:transform .25s ease;}
-.nav__dropdown-btn[aria-expanded="true"] .i--chevron{transform:rotate(180deg);}
-
-.nav__dropdown-menu{
-  position:absolute; top:calc(100% + 14px); left:50%; transform:translateX(-50%) translateY(6px);
-  background:var(--paper); border-radius:var(--radius-md); overflow:hidden;
-  width:250px; box-shadow:var(--shadow-soft);
-  opacity:0; visibility:hidden; transition:opacity .22s ease, transform .22s ease, visibility .22s ease;
-}
-.nav__dropdown-menu::before{
-  content:""; position:absolute; top:-6px; left:50%; transform:translateX(-50%) rotate(45deg);
-  width:12px; height:12px; background:var(--paper);
-}
-.nav__dropdown.is-open .nav__dropdown-menu{opacity:1; visibility:visible; transform:translateX(-50%) translateY(0);}
-.nav__dropdown-menu li a{display:flex; flex-direction:column; gap:2px; padding:14px 18px; color:var(--navy-900); border-bottom:1px solid var(--line);}
-.nav__dropdown-menu li:last-child a{border-bottom:none;}
-.nav__dropdown-menu li a span{font-weight:600; font-size:14.5px;}
-.nav__dropdown-menu li a small{color:var(--ink-400); font-size:12px;}
-.nav__dropdown-menu li a:hover{background:var(--cream);}
-
-.header__cta{display:flex; align-items:center; gap:14px;}
-.icon-btn{
-  width:40px; height:40px; border-radius:50%; border:1px solid var(--line-dark);
-  display:flex; align-items:center; justify-content:center; color:#dde1ec;
-  transition:background .2s ease, border-color .2s ease;
-}
-.icon-btn:hover{background:var(--navy-800); border-color:var(--gold-500);}
-
-.hamburger{display:none; flex-direction:column; justify-content:center; gap:5px; width:30px; height:30px;}
-.hamburger span{display:block; width:100%; height:2px; background:#fff; border-radius:2px; transition:transform .3s ease, opacity .3s ease;}
-.hamburger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-.hamburger[aria-expanded="true"] span:nth-child(2){opacity:0;}
-.hamburger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-
-.ticker{background:var(--navy-950); border-top:1px solid var(--line-dark); overflow:hidden; padding:9px 0;}
-.ticker__track{display:flex; align-items:center; gap:14px; width:max-content; animation:ticker 32s linear infinite;}
-.ticker__track span{font-size:11.5px; font-weight:600; letter-spacing:.14em; color:#8f9ab3; white-space:nowrap;}
-.ticker__track .dot{color:var(--gold-500); font-size:9px;}
-@keyframes ticker{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
-
-.nav-backdrop{position:fixed; inset:0; background:rgba(8,15,34,.55); z-index:98; opacity:0; visibility:hidden; transition:opacity .3s ease, visibility .3s ease;}
-.nav-backdrop.is-visible{opacity:1; visibility:visible;}
-
-@media (max-width: 980px){
-  .topbar{display:none;}
-  .hamburger{display:flex;}
-  .nav{position:fixed; top:0; right:0; height:100vh; width:min(320px,84vw); background:var(--navy-950); z-index:99; padding:100px 28px 40px; transform:translateX(100%); transition:transform .35s ease; overflow-y:auto; overflow-x:hidden;}
-  .nav.is-open{transform:translateX(0);}
-  .nav__list{flex-direction:column; align-items:flex-start; gap:6px; width:100%;}
-  .nav__list > li{width:100%;}
-  .nav__list > li > a, .nav__dropdown-btn{width:100%; padding:13px 0; justify-content:space-between; border-bottom:1px solid var(--line-dark);}
-  .nav__dropdown-menu{position:static !important; left:auto !important; transform:none !important; width:100% !important; max-width:100% !important; box-shadow:none; background:var(--navy-800); max-height:0; opacity:1; visibility:visible; overflow:hidden; transition:max-height .3s ease; border-radius:var(--radius-sm); margin-top:6px;}
-  .nav__dropdown-menu::before{display:none;}
-  .nav__dropdown.is-open .nav__dropdown-menu{max-height:220px;}
-  .nav__dropdown-menu li a{color:#fff; border-bottom:1px solid var(--line-dark);}
-  .nav__dropdown-menu li a small{color:#8f9ab3;}
-  .header__cta .icon-btn{display:none;}
-  .header__cta .btn--gold{padding:10px 18px; font-size:13.5px;}
-}
-.header.is-scrolled .header__inner{padding-top:10px; padding-bottom:10px;}
 
 /* =========================================================
    PAGE HERO
    ========================================================= */
 .page-hero{position:relative; min-height:56vh; display:flex; align-items:center; overflow:hidden; padding:60px 0 70px;}
 .page-hero__bg{
-  position:absolute; inset:0;
+  position:absolute; inset:0; background-size:cover; background-position:center;
+  background-repeat:no-repeat;
   background-color:transparent;
   background-image:url('images/about-hero.jpg');
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
-  filter:brightness(1.08) contrast(1.02);
 }
 .page-hero__overlay{background:linear-gradient(100deg, rgba(8,15,34,.35) 0%, rgba(8,15,34,.22) 45%, rgba(8,15,34,.10) 100%); position:absolute; inset:0;}
 .page-hero__content{position:relative; z-index:2; max-width:680px; margin:0 auto; padding:0 40px; }
@@ -271,6 +173,7 @@ a:focus-visible, button:focus-visible{
 .story__media{position:relative;}
 .story__image{
   width:100%; aspect-ratio:1/1.05; border-radius:var(--radius-lg);
+  /* background-color:var(--navy-800); */
   background-image:linear-gradient(160deg, var(--navy-700), var(--gold-600) 140%), url('images/about-story.jpg');
   background-blend-mode:overlay; background-size:cover; background-position:center;
   box-shadow:var(--shadow-soft);
@@ -314,6 +217,7 @@ a:focus-visible, button:focus-visible{
 .culture__media{position:relative;}
 .culture__image{
   width:100%; aspect-ratio:1/1.05; border-radius:var(--radius-lg);
+  /* background-color:var(--navy-800); */
   background-image:linear-gradient(160deg, var(--navy-700), var(--gold-600) 140%), url('images/about-office.jpg');
   background-blend-mode:overlay; background-size:cover; background-position:center;
   box-shadow:var(--shadow-soft);
@@ -348,6 +252,7 @@ a:focus-visible, button:focus-visible{
 .founder__media{position:relative;}
 .founder__image{
   width:100%; aspect-ratio:4/5; border-radius:var(--radius-lg);
+  /* background-color:var(--navy-800); */
   background-image:linear-gradient(160deg, var(--navy-700), var(--navy-950)), url('images/founder.jpg');
   background-blend-mode:overlay; background-size:cover; background-position:center top;
   box-shadow:var(--shadow-soft);
@@ -532,8 +437,8 @@ a:focus-visible, button:focus-visible{
 
     <nav class="nav" id="siteNav">
       <ul class="nav__list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="is-active">About Us</a></li>
+        <li><a href="index.html" class="is-active">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
         <li><a href="services.html">Services</a></li>
         <li class="nav__dropdown">
           <button class="nav__dropdown-btn" id="projectsBtn" aria-expanded="false">
@@ -561,6 +466,7 @@ a:focus-visible, button:focus-visible{
     </div>
   </div>
 
+  <!-- Service marquee ticker -->
   <div class="ticker">
     <div class="ticker__track">
       <span>RESIDENTIAL PLOTS</span><span class="dot">✦</span>
@@ -572,6 +478,7 @@ a:focus-visible, button:focus-visible{
       <span>CMDA &amp; DTCP APPROVED</span><span class="dot">✦</span>
       <span>RERA COMPLIANT</span><span class="dot">✦</span>
       <span>FREE SITE VISIT</span><span class="dot">✦</span>
+      <!-- duplicate for seamless loop -->
       <span>RESIDENTIAL PLOTS</span><span class="dot">✦</span>
       <span>FARM &amp; AGRI LAND</span><span class="dot">✦</span>
       <span>HOUSE &amp; VILLA SALE</span><span class="dot">✦</span>
@@ -584,6 +491,7 @@ a:focus-visible, button:focus-visible{
     </div>
   </div>
 </header>
+
 
 <!-- ================= PAGE HERO ================= -->
 <section class="page-hero page-hero--about">
@@ -999,9 +907,15 @@ a:focus-visible, button:focus-visible{
 (function () {
   'use strict';
 
+  /* ---------------------------------------------------------
+     Footer year
+  --------------------------------------------------------- */
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  /* ---------------------------------------------------------
+     Header: shrink + shadow on scroll
+  --------------------------------------------------------- */
   var header = document.getElementById('siteHeader');
   function updateHeaderScrollState() {
     if (!header) return;
@@ -1011,6 +925,9 @@ a:focus-visible, button:focus-visible{
   updateHeaderScrollState();
   window.addEventListener('scroll', updateHeaderScrollState, { passive: true });
 
+  /* ---------------------------------------------------------
+     Mobile nav: hamburger + backdrop
+  --------------------------------------------------------- */
   var hamburger = document.getElementById('hamburgerBtn');
   var nav = document.getElementById('siteNav');
   var backdrop = document.getElementById('navBackdrop');
@@ -1057,6 +974,9 @@ a:focus-visible, button:focus-visible{
     });
   }
 
+  /* ---------------------------------------------------------
+     "Projects" dropdown — click to toggle (works desktop + mobile)
+  --------------------------------------------------------- */
   var dropdownBtn = document.getElementById('projectsBtn');
   var dropdownWrap = dropdownBtn ? dropdownBtn.closest('.nav__dropdown') : null;
 
@@ -1088,6 +1008,9 @@ a:focus-visible, button:focus-visible{
     }
   });
 
+  /* ---------------------------------------------------------
+     Scroll reveal animations
+  --------------------------------------------------------- */
   var revealEls = document.querySelectorAll('.reveal');
 
   if ('IntersectionObserver' in window && revealEls.length) {
@@ -1107,6 +1030,9 @@ a:focus-visible, button:focus-visible{
     revealEls.forEach(function (el) { el.classList.add('is-visible'); });
   }
 
+  /* ---------------------------------------------------------
+     Animated stat counters
+  --------------------------------------------------------- */
   var statEls = document.querySelectorAll('.stat__num[data-count]');
 
   function animateCount(el) {
@@ -1148,6 +1074,9 @@ a:focus-visible, button:focus-visible{
     });
   }
 
+  /* ---------------------------------------------------------
+     Smooth-scroll for on-page hash links
+  --------------------------------------------------------- */
   document.addEventListener('click', function (e) {
     var link = e.target.closest('a[href*="#"]');
     if (!link) return;
