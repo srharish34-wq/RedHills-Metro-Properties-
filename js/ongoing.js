@@ -1,28 +1,4 @@
-(function () {
-    'use strict';
 
-    /* ---------- Projects dropdown toggle ---------- */
-    var projectsDropdown = document.getElementById('projectsDropdown');
-    var projectsDropdownTrigger = document.getElementById('projectsDropdownTrigger');
-    if (projectsDropdown && projectsDropdownTrigger) {
-        projectsDropdownTrigger.addEventListener('click', function (e) {
-            e.stopPropagation();
-            var isOpen = projectsDropdown.classList.toggle('is-open');
-            projectsDropdownTrigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-        });
-        document.addEventListener('click', function (e) {
-            if (!projectsDropdown.contains(e.target)) {
-                projectsDropdown.classList.remove('is-open');
-                projectsDropdownTrigger.setAttribute('aria-expanded', 'false');
-            }
-        });
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape') {
-                projectsDropdown.classList.remove('is-open');
-                projectsDropdownTrigger.setAttribute('aria-expanded', 'false');
-            }
-        });
-    }
 
     /* ---------- Footer year auto-update ---------- */
     var yearEls = document.querySelectorAll('footer p');
