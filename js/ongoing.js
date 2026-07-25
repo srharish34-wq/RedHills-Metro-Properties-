@@ -150,7 +150,7 @@
         {
             id: 1,
             title: 'SVK Nagar Phase 2',
-            location: 'Chennai',
+            location: 'REDHILLS ,Chennai',
             status: 'Ongoing',
             stage: 'Site Development',
             progress: 70,
@@ -160,7 +160,7 @@
         {
             id: 2,
             title: 'SVK Nagar Phase 3',
-            location: 'Chennai',
+          location: 'REDHILLS ,Chennai',
             status: 'Ongoing',
             stage: 'Approval Stage',
             progress: 45,
@@ -170,7 +170,7 @@
         {
             id: 3,
             title: 'MN Nagar',
-            location: 'Chennai',
+          location: 'REDHILLS ,Chennai',
             status: 'Ongoing',
             stage: 'Site Development',
             progress: 60,
@@ -180,7 +180,7 @@
         {
             id: 4,
             title: 'SRP Phase 1–5',
-            location: 'Chennai',
+            location: 'REDHILLS ,Chennai',
             status: 'Ongoing',
             stage: 'Multi-Phase Development',
             progress: 55,
@@ -200,7 +200,7 @@
         {
             id: 6,
             title: 'Rajmano Avenue Phase 2',
-            location: 'Chennai',
+            location: 'REDHILLS ,Chennai',
             status: 'Ongoing',
             stage: 'Approval Stage',
             progress: 40,
