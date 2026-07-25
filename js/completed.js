@@ -110,7 +110,7 @@
         {
             id: 1,
             title: 'BK Garden Phase 2 & 3',
-            location: 'Chennai',
+             location: 'REDHILLS ,Chennai',
             status: 'Completed',
             description: 'Residential layout, fully sold and registered with CMDA/DTCP approvals and clear title documentation.',
             images: ['images/bk-garden-1.jpeg', 'images/bk-garden-2.jpeg', 'images/bk-garden-3.jpeg']
@@ -126,7 +126,7 @@
         {
             id: 3,
             title: 'Spring Phase 1',
-            location: 'Chennai',
+             location: 'REDHILLS ,Chennai',
             status: 'Completed',
             description: 'Residential plot layout, fully delivered with CMDA/DTCP approvals and clear title documentation.',
             images: ['images/spring-1.jpeg', 'images/spring-2.jpeg', 'images/spring-3.jpeg']
@@ -134,7 +134,7 @@
         {
             id: 4,
             title: 'Rajmano Avenue Phase 1',
-            location: 'Chennai',
+  location: 'REDHILLS ,Chennai',
             status: 'Completed',
             description: 'Residential plot layout, fully delivered with CMDA/DTCP approvals and clear title documentation.',
             images: ['images/rajmano-1.jpeg', 'images/rajmano-2.jpeg', 'images/rajmano-3.jpeg']
@@ -142,7 +142,7 @@
         {
             id: 5,
             title: 'KK Farm Land',
-            location: 'Chennai',
+            location: 'REDHILLS ,Chennai',
             status: 'Completed',
             description: 'Farm land parcels sold and transferred with complete survey records and clear ownership documentation.',
             images: ['images/kk-farmland-1.jpeg', 'images/kk-farmland-2.jpeg', 'images/kk-farmland-3.jpeg']
@@ -150,7 +150,7 @@
         {
             id: 6,
             title: 'Commercials Layout (MK)',
-            location: 'Chennai',
+              location: 'REDHILLS ,Chennai',
             status: 'Completed',
             description: 'Commercial plot layout, fully sold with CMDA/DTCP approvals and clear title documentation.',
             images: ['images/commercials-mk-1.jpeg', 'images/commercials-mk-2.jpeg', 'images/commercials-mk-3.jpeg']
