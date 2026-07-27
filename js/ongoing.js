@@ -190,7 +190,7 @@
         {
             id: 5,
             title: 'Farm Land - KK Nagar',
-            location: 'KK Nagar, Chennai',
+              location: 'REDHILLS ,Chennai',
             status: 'Ongoing',
             stage: 'Plot Demarcation',
             progress: 50,
