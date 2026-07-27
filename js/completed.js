@@ -118,7 +118,7 @@
         {
             id: 2,
             title: 'KK Nagar (Edapaliyam)',
-            location: 'Edapaliyam, Chennai',
+          location: 'REDHILLS ,Chennai',
             status: 'Completed',
             description: 'Residential plot layout at Edapaliyam, successfully delivered with clear title documentation.',
             images: ['images/kk-nagar-1.jpeg', 'images/kk-nagar-2.jpeg', 'images/kk-nagar-3.jpeg']
